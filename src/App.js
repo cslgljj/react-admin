@@ -8,6 +8,7 @@ import Login from './views/login/index'
 import User from './views/user/index'
 import Nav from './router/Nav'
 import Auth from './views/auth/index'
+import NotMatch from './views/notMatch/index'
 const {
     Header, Content, Footer, Sider,
 } = Layout;
@@ -37,7 +38,7 @@ class App extends Component {
 
                         onCollapse={this.onCollapse}
                     >
-                        <div className='logo' style={{ color: '#fff' }}>su</div>
+                        <div className='logo' style={{ color: '#fff' }}></div>
                         <Nav />
                     </Sider>
                     <Layout>
@@ -47,11 +48,13 @@ class App extends Component {
                             onClick={this.toggle}
                             style={{ fontSize: 20, color: '#fff' }}
                         /></Header>
-                        <Content style={{ margin: '16px 16px' }}>
+                        <Content style={{ margin: '16px 16px', position: 'relative', overflowY: 'auto' }}>
                             <Switch>
                                 <Route exact path="/" component={Login} />
-                                <Route path="/user" component={User} />
-                                <Route path="/auth" component={Auth} />
+                                <Route exact path="/user" component={User} />
+                                <Route exact path="/auth" component={Auth} />
+                                <Route component={NotMatch} />
+
                             </Switch>
                         </Content>
                         <Footer style={{ textAlign: 'center' }}>
