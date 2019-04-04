@@ -55,12 +55,20 @@ export default class Nav extends Component {
                     </Menu.Item>
 
                 </SubMenu>
+                <SubMenu
+                    key="/auth"
+                    title={
+                        <span>
+                            <Icon type="credit-card" />
+                            <span>权限管理</span>
+                        </span>
+                    }
+                >
+                    <Menu.Item key="/auth">
+                        <Link to={`/auth`}>权限管理</Link>
+                    </Menu.Item>
 
-                <Menu.Item key="/auth">
-                    <Icon type="file" />
-                    <Link to={`/auth`}>权限管理</Link>
-                </Menu.Item>
-
+                </SubMenu>
             </Menu >
         )
     }

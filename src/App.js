@@ -16,6 +16,11 @@ class App extends Component {
     state = {
         collapsed: false,
     };
+    toggle = () => {
+        this.setState({
+            collapsed: !this.state.collapsed
+        });
+    };
 
     onCollapse = (collapsed) => {
         console.log(collapsed);
@@ -35,7 +40,6 @@ class App extends Component {
                         collapsible
                         trigger={null}
                         collapsed={this.state.collapsed}
-
                         onCollapse={this.onCollapse}
                     >
                         <div className='logo' style={{ color: '#fff' }}></div>
@@ -48,7 +52,7 @@ class App extends Component {
                             onClick={this.toggle}
                             style={{ fontSize: 20, color: '#fff' }}
                         /></Header>
-                        <Content style={{ margin: '16px 16px', position: 'relative', overflowY: 'auto' }}>
+                        <Content style={{ margin: '16px 16px', position: 'relative', }}>
                             <Switch>
                                 <Route exact path="/" component={Login} />
                                 <Route exact path="/user" component={User} />
